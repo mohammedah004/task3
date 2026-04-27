@@ -38,7 +38,7 @@ export const Content = () => {
       const getData=async ()=>{
             {/*Get Product */}
             try {
-                  const ProductResponse=await fetch(("http://localhost:4000/products"),{
+                  const ProductResponse=await fetch(("https://69ef3562112e1b968e242fb4.mockapi.io/db/products"),{
                         method:`GET`,
                   });
 
@@ -56,7 +56,7 @@ export const Content = () => {
 
             {/*Get Users*/}
             try {
-                  const UserResponse=await fetch(("http://localhost:4000/user"),{
+                  const UserResponse=await fetch(("https://69ef3562112e1b968e242fb4.mockapi.io/db/user"),{
                         method:`GET`,
                   });
 

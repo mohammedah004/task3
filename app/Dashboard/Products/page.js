@@ -22,7 +22,7 @@ import Link from "next/link";
 
       const getData = async () => {
             try {
-                  const response = await fetch("http://localhost:4000/products", {
+                  const response = await fetch("https://69ef3562112e1b968e242fb4.mockapi.io/db/products", {
                   method: "GET"
                   });
 
@@ -67,7 +67,7 @@ import Link from "next/link";
       /* Delete Element */
       const DeleteElement = async (id) => {
             try {
-                  const response = await fetch(`http://localhost:4000/products/${id}`, {
+                  const response = await fetch(`https://69ef3562112e1b968e242fb4.mockapi.io/db/products/${id}`, {
                   method: `DELETE`,
                   });
 
@@ -117,7 +117,7 @@ import Link from "next/link";
             }
 
             try {
-                  const response = await fetch(`http://localhost:4000/products/${editElement.id}`, {
+                  const response = await fetch(`https://69ef3562112e1b968e242fb4.mockapi.io/db/products/${editElement.id}`, {
                   method: "PUT",
                   headers: {
                         "Content-Type": "application/json"

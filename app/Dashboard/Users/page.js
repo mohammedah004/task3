@@ -50,7 +50,7 @@
                   role: roleRef.current.value
             }
             try {
-                  const response = await fetch('http://localhost:4000/user', {
+                  const response = await fetch('https://69ef3562112e1b968e242fb4.mockapi.io/db/user', {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify(data)
@@ -75,7 +75,7 @@
                   role: roleRef.current.value
             };
             try {
-                  const response = await fetch(`http://localhost:4000/user/${editElement.id}`, {
+                  const response = await fetch(`https://69ef3562112e1b968e242fb4.mockapi.io/db/user/${editElement.id}`, {
                   method: 'PUT',
                   headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify(data)
@@ -97,7 +97,7 @@
       /* Get Users */
       const getUsers = async () => {
             try {
-                  const response = await fetch('http://localhost:4000/user');
+                  const response = await fetch('https://69ef3562112e1b968e242fb4.mockapi.io/db/user');
                   if (response.ok) {
                   const result = await response.json();
                   setUsers(result);
@@ -114,7 +114,7 @@
       /* Delete User */
       const deletUser = async (id) => {
             try {
-                  const response = await fetch(`http://localhost:4000/user/${id}`, {
+                  const response = await fetch(`https://69ef3562112e1b968e242fb4.mockapi.io/db/user/${id}`, {
                   method: 'DELETE'
                   })
                   if (response.ok) {

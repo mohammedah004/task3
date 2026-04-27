@@ -45,7 +45,7 @@ export default function AddProducts () {
             }
 
             try {
-                  const response=await fetch(("http://localhost:4000/products"),{
+                  const response=await fetch(("https://69ef3562112e1b968e242fb4.mockapi.io/db/products"),{
                         method:`POST`,
                         headers: {
                               "Content-Type": "application/json", 
