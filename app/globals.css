@@ -200,10 +200,19 @@ ul{
 
 /*Start content*/
 .content{
-      flex-grow: 1;
+      flex: 1;
+      width: 100%;
+      min-width: 0;
       min-height: 100vh;
 }
 
+@media (max-width:768px){
+      .header,
+      .box,
+      .ChartBox{
+      padding: 10px;
+      }
+}
 
 /*Start header*/
 
@@ -318,6 +327,13 @@ ul{
       background-color: var(--primary);
       padding: 2px;
       border-radius: 5px;
+}
+
+@media (max-width:768px){
+      .LoginFormBox{
+            width: 350px;
+            padding: 20px;
+      }
 }
 
 
