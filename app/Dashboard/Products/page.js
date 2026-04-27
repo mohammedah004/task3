@@ -190,7 +190,7 @@ import Link from "next/link";
                                     </div>
                                     </div>}
                         </div>
-                        <Link href="/Products/addProducts" className="link">Add Product</Link>
+                        <Link href="/Dashboard/Products/addProducts" className="link">Add Product</Link>
 
                   </div>
                         
