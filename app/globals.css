@@ -1,0 +1,826 @@
+
+:root {
+  /* ألوان الخلفيات */
+  --bg-main: #0f172a;        /* الخلفية الأساسية للموقع */
+  --bg-card: #1e293b;        /* خلفية البطاقات والعناصر المنبثقة */
+  --bg-sidebar: #111827;     /* خلفية القائمة الجانبية */
+
+  /* الألوان التفاعلية (Branding) */
+  --primary: #8b5cf6;        /* البنفسجي المشرق للأزرار والروابط */
+  --primary-hover: #7c3aed;  /* درجة أغمق قليلاً عند التمرير */
+  --accent: #14b8a6;         /* لون إضافي للتميز (Teal) */
+
+  /* ألوان النصوص */
+  --text-main: #f1f5f9;      /* النص الأساسي - أبيض مريح للعين */
+  --text-muted: #94a3b8;     /* نصوص أقل أهمية - رمادي مزرق */
+
+  /* الحدود والظلال */
+  --border-color: #334155;   /* حدود خفيفة للعناصر */
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+
+  /* ألوان الحالة (Status) */
+  --success: #10b981;
+  --error: #ef4444;
+  --warning: #f59e0b;
+  --info: #3b82f6;
+
+
+  --mainMargin:40px;
+  --mainTranstion:0.5s;
+}
+
+
+
+*{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+html{
+      scroll-behavior: smooth;
+      /* هان عند عمل انتقال الى رابط في الصفحة راح يذهب بيشكل ناعم*/
+}
+
+body{
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: var(--bg-light-gray);
+}
+
+ul{
+      list-style: none;
+}
+
+
+.contaner{
+      display: flex;
+      background-color:lightgray;
+}
+
+.Logincontaner{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color:lightgray;
+}
+
+
+.sidebar{
+      width: 250px;
+      background-color: var(--bg-sidebar);
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      border-radius: 5px;
+
+}
+
+@media (max-width:768px){
+      .sidebar{
+            width: 76px;
+            align-items: center;
+      } 
+}
+
+
+.sidebar h3{
+      width: 100%;
+      padding: 20px;
+      border-bottom: 1px solid var(--text-main);
+      color: var(--info);
+      margin-bottom: 10px;
+}
+
+@media (max-width:768px){
+      .sidebar h3{
+            text-align: center;
+      } 
+}
+
+
+.sidebar ul{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-content: flex-start;
+      padding: 10px;
+}
+
+@media (max-width:768px){
+
+      .sidebar .link span{
+            display: none;
+      } 
+}
+
+
+
+
+.sidebar ul li{
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      margin-bottom: 10px;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: var(--mainTranstion);
+      width: 100%;
+}
+
+.sidebar ul  .link{
+      color: var(--text-main);
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+
+}
+
+.sidebar ul li:hover{
+      background-color: #1e5dc2;
+      border-radius: 20px;
+}
+
+.active {
+      background-color: var(--info);
+      border-radius: 20px;
+}
+
+
+
+/*End Sidebar*/
+
+
+/*Start Loading component*/
+
+.loadingPage{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      transform: translate(-50%,-50%);
+      background-color: rgba(190, 190, 190, 0.479);
+      backdrop-filter: blur(10px);
+
+}
+.loadingPage .circle{
+      width: 80px;
+      height: 80px;
+      background-color: transparent;
+      border-radius: 50%;
+      border: 8px solid rgba(0, 0, 0, 0.1);
+      border-top-color: var(--bg-card);
+      animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+      to {
+      transform: rotate(360deg);
+      }
+}
+
+/*end loading component*/
+
+/*Start NProgress*/
+#nprogress .bar{
+      background-color: var(--primary) !important; 
+      height: 3px !important;
+}
+
+
+/*Start content*/
+.content{
+      flex-grow: 1;
+      min-height: 100vh;
+}
+
+
+/*Start header*/
+
+.header{
+      padding: 20px;
+      background-color: white;
+      width: 100%;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: var(--mainMargin);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+
+.header .text{
+      font-size: 25px;
+      font-weight: bold;
+      color: var(--bg-main);
+}
+
+.header .user{
+      width: 40px;
+      height: 40px;
+      background-color: var(--warning);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--text-main);
+      border-radius: 50%;
+}
+
+
+/*End Header*/
+
+
+/*Srart Cards*/
+
+.box{
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(250px,auto));
+      gap: 20px;
+}
+
+.box .card{
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      border-radius: 20px;
+}
+
+.box .card .title{
+      display: flex;
+      align-items: center;
+      font-size: 30px;
+      margin-bottom: 10px;
+      gap: 10px;
+}
+
+.box .card .title .cardIcon{
+      color: var(--info);
+}
+
+.box .card  .number{
+      text-align: center;
+      font-size: 25px;
+
+}
+
+
+/*Start Charts */
+
+.ChartBox{
+      width: 100%;
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+}
+
+.chart{
+      padding: 20px;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
+      justify-self: center;
+      min-width: 300px;
+      flex: 1 1 300px;
+      max-width: 100%;
+      border: 1px solid var(--text-muted) ;
+}
+
+
+/*Srart Login form */
+.LoginFormBox{
+      width: 400px;
+}
+
+.LoginFormBox .info{
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      margin-top: -15px;
+}
+
+.LoginFormBox .info p span{
+      background-color: var(--primary);
+      padding: 2px;
+      border-radius: 5px;
+}
+
+
+
+/*Start addProduct*/
+
+
+/* تنسيق الحاوية الكبيرة */
+.FormBox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: var(--mainMargin);
+      min-height: 80vh;
+}
+
+/* تنسيق الفورم الأساسي */
+form:not(.ProductBox){
+  background-color: var(--bg-card); /* استخدام خلفية البطاقات */
+      width: 100%;
+      max-width: 500px;
+      padding: 40px;
+      border-radius: 24px; /* زوايا منحنية بشكل عصري */
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      transition: var(--mainTranstion);
+}
+
+form:hover {
+  border-color: var(--primary); /* تأثير بسيط عند التمرير */
+}
+
+/* عنوان الفورم */
+form:not(.ProductBox) h3 {
+      color: var(--text-main);
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: 600;
+}
+
+/* حاوية كل حقل إدخال */
+form:not(.ProductBox) .cont > div {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+      width: 100%;
+}
+
+/* تنسيق النصوص (Labels) */
+form:not(.ProductBox) label {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-left: 5px;
+}
+
+/* تنسيق حقول الإدخال */
+form:not(.ProductBox) input {
+      padding: 14px 20px;
+      outline: none;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      background-color: var(--bg-main); /* لون أغمق قليلاً من البطاقة */
+      color: var(--text-main);
+      font-size: 1rem;
+      transition: var(--mainTranstion);
+}
+
+/* تأثير عند الضغط على الحقل */
+form input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+/* تنسيق حقل رفع الملفات */
+form input[type="file"] {
+      padding: 10px;
+      cursor: pointer;
+      background-color: var(--bg-card);
+      border: 2px dashed var(--border-color);
+}
+
+form input[type="file"]:hover {
+      border-color: var(--accent);
+}
+
+/* زر الإرسال (يفضل إضافته في الـ JSX) */
+form button {
+      background-color: var(--primary);
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: var(--mainTranstion);
+}
+
+form button:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+}
+
+
+/*End Products Forms*/
+
+
+
+/*User Forms*/
+
+/* تنسيق قائمة الاختيار (Select) */
+form select {
+      background-color: var(--bg-main);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 14px 18px;
+      color: var(--text-main);
+      outline: none;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: var(--mainTranstion);
+      margin-bottom: 10px;
+      width: 100%;
+      
+      /* إزالة سهم المتصفح الافتراضي */
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      
+      /* إضافة سهم مخصص (أيقونة بسيطة) */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='C19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 15px center;
+      background-size: 18px;
+}
+
+/* عند الضغط على القائمة */
+form select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15);
+}
+
+/* تنسيق الخيارات (Options) */
+/* ملاحظة: المتصفحات تحد من قدرتنا على تعديل شكل الـ option الداخلي 
+لكن يمكننا تحسين الألوان الأساسية */
+form select option {
+      background-color: var(--bg-card);
+      color: var(--text-main);
+      padding: 10px;
+}
+
+/* تحسين شكل حاوية الحقول */
+.field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 15px;
+      width: 100%;
+}
+
+/*End forms */
+
+
+
+/*Start Products Page*/
+
+.ProductBox{
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+}
+
+.ProductBox .searchBox{
+      width: 100%;
+      padding: 10px;
+      margin-bottom: -15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+}
+
+.ProductBox .searchBox input{
+      width: 80%;
+      outline: none;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      transition: var(--mainTranstion);
+      box-shadow: var(--shadow-sm);
+}
+
+.ProductBox .searchBox .link{
+      text-decoration: none;
+      color:  white;
+      background-color: var(--bg-card);
+      width: 100px;
+      padding:10px 5px;
+      border-radius: 20px;
+      transition: var(--mainTranstion);
+}
+
+.ProductBox .searchBox .link:hover{
+      background-color: var(--accent);
+}
+
+.ProductBox .searchBox input:focus{
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+.filter{
+      position: relative;
+}
+
+.popFilter{
+      background-color: var(--bg-card);
+      width: 150px;
+      border-radius: 10px;
+      text-align: center;
+      padding: 10px 5px;
+      position: absolute;
+      right: -12px;
+      top: 40px;
+      z-index: 5;
+}
+
+
+
+.popFilter::after{
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-bottom: 15px solid var(--bg-card);
+      border-left: 15px solid transparent;
+      border-top: 15px solid transparent;
+      border-right: 15px solid transparent;
+      top: -26px;
+      right: 5px;
+}
+
+.popFilter .filterIcon{
+      color:var(--bg-sidebar);
+      transition: var(--mainTranstion);
+}
+
+.popFilter .filterIcon:hover{
+      color: var(--accent);
+}
+
+
+.popFilter .filterChose{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+}
+
+.popFilter .filterChose p{
+      padding: 10px;
+      color: white;
+      text-transform: capitalize;
+      transition: var(--mainTranstion);
+      position: relative;
+      cursor: pointer;
+}
+
+.popFilter .filterChose p::after{
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: white;
+      transition: var(--mainTranstion);
+}
+
+.popFilter .filterChose p:hover{
+      color: var(--accent);
+}
+
+.popFilter .filterChose p:hover::after{
+      width: 100%;
+      height: 2px;
+      background-color: var(--accent);
+}
+
+
+
+
+
+
+.ProductBox .show{
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(250px,auto));
+      background-color: white;
+      width: 100%;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      gap: 20px;
+}
+
+.ProductBox   .title{
+      align-self: center;
+      text-align: center;
+      font-size: 30px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--text-muted);
+      width: 50%;
+}
+
+
+.ProductBox .show .productCard{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color:var(--bg-card);
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--mainTranstion);
+}
+
+.ProductBox .show .productCard:hover{
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+      border-color: var(--primary);
+}
+
+.ProductBox .show .productCard .image {
+    width: 100%; /* تأخذ كامل عرض البطاقة المتاح */
+    height: 180px; /* تحديد ارتفاع ثابت ومناسب للحاوية */
+    background-color: #f8fafc; /* خلفية فاتحة جداً لإبراز الصورة (اختياري) */
+    border-radius: 12px; /* زوايا منحنية ناعمة للحاوية */
+    border: 1px solid var(--border-color); /* حد خفيف يحدد الحاوية */
+    margin-bottom: 10px; /* مسافة أسفل الحاوية قبل النص */
+      
+    /* لضمان توسيط الصورة تماماً داخل الحاوية */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* إخفاء أي جزء زائد من الصورة */
+    padding: 20px; /* مسافة داخلية لحماية الصورة من الحواف */
+}
+
+.ProductBox .show .productCard .image img{
+      max-width: 100%;
+}
+
+.ProductBox .show .productCard .info{
+      display: flex;
+      color: white;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      flex-grow: 5;
+}
+
+.ProductBox .show .productCard .info h3{
+      text-transform: capitalize;
+      color: var(--accent);
+}
+
+
+
+.ProductBox .show .productCard .info .buttons,
+.userBox .userCard .buttons{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+}
+
+.ProductBox .show .productCard .info .buttons .icon,
+.userBox .userCard .buttons .icon{
+      transition: var(--mainTranstion);
+      font-size: 20px;
+
+}
+
+.ProductBox .show .productCard .info .buttons .edit:hover,
+.userBox .userCard .buttons .edit:hover{
+      color: var(--primary-hover);
+
+}
+
+.ProductBox .show .productCard .info .buttons .delet:hover,
+.userBox .userCard .buttons .delet:hover{
+      color: var(--error);
+}
+
+/*Start Edit Form*/
+
+.EditPoP{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translate(-50%,-50%);
+      background-color: rgba(190, 190, 190, 0.479);
+      backdrop-filter: blur(10px);
+}
+
+.EditCard .CardTitle{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+}
+
+.EditCard .CardTitle .close{
+      width: 35px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: red;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: var(--mainTranstion);
+}
+
+
+.EditCard .CardTitle .close:hover{
+      background-color: var(--error);
+}
+
+
+/* Start users Show*/
+
+.userBox{
+      background-color: white;
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      border-radius: 10px;
+      
+}
+
+.userBox .title{
+      text-align: center;
+      font-size: 30px;
+      color: var(--bg-sidebar);
+      border-bottom: 1px solid;
+      width: fit-content;
+      margin: 0 auto 20px;
+}
+
+.userBox .userCard{
+      padding: 20px;
+      background-color:var(--bg-card);
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--mainTranstion);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+
+
+}
+
+.userBox .userCard:hover{
+      transform: translateY(-5px);
+}
+
+.userBox .userCard .inf{
+      text-transform: capitalize;
+}
+
+.userBox .userCard .inf h2{
+      color: white;
+      margin-bottom: 5px;
+}
+
+.userBox .userCard .inf .role{
+      color: white;
+      padding: 10px;
+      background-color: var(--info);
+      width: fit-content;
+      border-radius: 20px;
+      font-size: 15px;
+
+}
+
+.userBox .userCard .buttons{
+      color: white;
+}
+

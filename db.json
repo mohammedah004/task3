@@ -1,0 +1,62 @@
+{
+  "products": [
+    {
+      "name": "Xaomi Redmi 9",
+      "price": "200",
+      "img": "xaomiRedmi9.jpg",
+      "date": "Mar",
+      "id": "o25MhAmE9Uk"
+    },
+    {
+      "name": "Iphone 17 pro max",
+      "price": "1200",
+      "img": "Iphone17pro.jpg",
+      "date": "Jul",
+      "id": "K6AXvrtnDLw"
+    },
+    {
+      "name": "iphone 14",
+      "price": "900",
+      "img": "iphone14pro.jpg",
+      "date": "Jun",
+      "id": "Yju_DTGGXWI"
+    },
+    {
+      "name": "Samsuong S24Ultra",
+      "price": "1100",
+      "img": "galaxyS24ULTRA.jpg",
+      "date": "Sep",
+      "id": "9NhM8-QzXAE"
+    },
+    {
+      "name": "Samsoung A51",
+      "price": "300",
+      "img": "galaxyA51.jpg",
+      "date": "Aug",
+      "id": "PCmiYT7n88E"
+    }
+  ],
+  "user": [
+    {
+      "name": "Mohammed ashraf",
+      "role": "Admin",
+      "id": "1"
+    },
+    {
+      "name": "ahmed mohsen",
+      "role": "Editor",
+      "id": "Bu4xJDxEFvI"
+    },
+    {
+      "name": "Yousef Ahmed",
+      "role": "User",
+      "id": "yz6t_gksBCw"
+    },
+    {
+      "name": "Ali Al-Ejla",
+      "role": "User",
+      "id": "R2qbgxuIKCM"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
